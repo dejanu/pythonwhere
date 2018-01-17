@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "appone/base.html" %}
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+</head>
+
+{% block body_block %}
+
+<ol>List of projects:</ol>
+{% for i in kp %}
+<li>Project name: <strong> {{i.name}} </strong></li>
+{% endfor %}
+<br>
+<p>Project links </p>
+<a href="{% url 'appone:flat' %}">Flat</a>
+<a href="{% url 'appone:mansion' %}">Mansion</a>
+<a href="{% url 'appone:house' %}">House</a>
+{% endblock %}
